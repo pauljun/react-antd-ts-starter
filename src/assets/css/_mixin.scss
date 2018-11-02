@@ -1,0 +1,111 @@
+/**
+ * sass函数库
+ */
+// 设置弹性盒(align-items:center,justify-content:center,flex-direction:row)
+@mixin setFlex($x:center,$y:center,$direction:row){
+    display:flex;
+    display:-webkit-flex;
+    display:-moz-flex;
+    display:-ms-flexbox;
+    align-items: $x;
+    -webkit-align-items: $x;
+    justify-content: $y;
+    -webkit-justify-content: $y;
+    flex-direction:$direction;
+    -webkit-flex-direction:$direction;
+}
+// 弹性盒占比
+@mixin flexWrap($wrap:wrap){
+    flex-wrap:$wrap;
+    -webkit-flex-wrap:$wrap;
+}
+// 弹性盒占比
+@mixin flexNum($num:1){
+    flex:$num;
+    -webkit-flex:$num;
+    -moz-flex:$num;
+    -ms-flexbox:$num;
+}
+// 设置字体(font-size,color:$c-font,text-align:center)
+@mixin setFont($size,$color:$c-normal,$T-A:center){
+    font-size:$size;
+    color:$color;
+    text-align:$T-A;
+}
+// 省略号
+@mixin ellip(){
+    white-space:nowrap;
+    text-overflow: ellipsis;
+    overflow: hidden;
+}
+// 设置宽高(width:100%,height:100%)
+@mixin setWH($width:100%,$height:100%){
+    width: $width;
+    height: $height;
+}
+// 相对定位垂直居中
+@mixin absCenter{
+    position: absolute;
+    top: 0;
+    left:0;
+    right:0;
+    bottom:0;
+    margin:auto;
+}
+// 绝对定位垂直居中
+@mixin relCenter{
+    position: relative;
+    top: 50%;
+    left:50%;
+    -webkit-transform: translate(-50%,-50%);
+    -ms-transform: translate(-50%,-50%);
+    transform: translate(-50%,-50%);
+}
+// 怪异盒模型
+@mixin bdbox{
+    box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+}
+// 移动端pxToRem
+@function ptr($px,$base:64){
+    @return ($px/$base) * 1rem;
+}
+
+// 设置动画效果
+@mixin animation($name, $duration:1s, $direction:normal) {
+    animation:$name $duration $direction;
+    -webkit-animation:$name $duration $direction;
+}
+
+//配置中心公用样式
+@mixin boxTitle{
+    font-size: 14px;
+    font-weight: 700;
+    color: #333333;
+    padding-left: 5px;
+    position: relative;
+    margin-bottom:20px;
+    margin-left: 20px;
+    height: 14px;
+    line-height: 14px;
+    border-left: 2px solid #107EFF;
+}
+@mixin boxTitleBorder{
+    content:' ';
+    position: absolute;
+    top:0;
+    left:0;
+    width: 3px;
+    height:100%;
+    background-image: linear-gradient(0deg, #43b6ff 0%, #65e0ff 100%);
+    box-shadow: 0px 1px 2px 0px rgba(36, 180, 255, 0.6);
+}
+@mixin blueLinearGradient{
+    background-image: linear-gradient(0deg,  #45b9ff 0%,  #65e1ff 100%);
+    box-shadow: 0px 4px 8px 0px  rgba(85, 205, 255, 0.3);
+}
+@mixin greenLinearGradient{
+    background-image: linear-gradient(0deg, #42d056 0%,  #bae83e 100%);
+    box-shadow: 0px 4px 8px 0px  rgba(109, 217, 78, 0.3);
+}
