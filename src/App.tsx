@@ -1,20 +1,30 @@
 import * as React from 'react';
-import { BrowserRouter, Route, Switch } from 'react-router-dom';
-// import AppRoutes from './router';
+import { HashRouter as Router, Route, Switch } from 'react-router-dom';
+import AppRoutes from './_router';
 // import IndexView from './view/Index/index';
 import NotFoundView from './view/404/index';
-import Layout from './view/Layout/index';
 
 class App extends React.Component {
   public render() {
     return (
       <div className='wrapper'>
-        <BrowserRouter>
+        <Router>
           <Switch>
-            <Route path='/:module' component={Layout} />
-            <Route component={NotFoundView} />
+            {
+              AppRoutes.map((v, i) =>
+                <Route
+                  key={i}
+                  exact={v.exact ? v.exact : false}
+                  path={v.path}
+                  component={v.component}
+                />
+              )
+            }
+            <Route
+              component={NotFoundView}
+            />
           </Switch>
-        </BrowserRouter>
+        </Router>
       </div>
     );
   }

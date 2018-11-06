@@ -7,9 +7,14 @@ const MenuList:MenuModel[] = [
     title: "首页",
   },
   {
-    icon: "home",
+    icon: "layout",
     path: "/resource",
     title: "资料",
+  },
+  {
+    icon: "read",
+    path: "/read",
+    title: "贡献"
   }
 ]
 
