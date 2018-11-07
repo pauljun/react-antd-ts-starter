@@ -3,10 +3,19 @@ import HeaderComponent from './components/Header';
 import { Route, Switch } from 'react-router-dom';
 import Routes from './_child_routes';
 import ErrorPage from '../404/index';
+import { inject, observer } from 'mobx-react';
 import './index.scss';
 
-class View extends React.Component {
+export interface IProps {
+  history: object;
+  UserStore?: object;
+}
+
+@inject('UserStore')
+@observer
+class View extends React.Component<IProps, object> {
   public render() {
+    console.log(this.props.UserStore)
     return (
       <div>
         <HeaderComponent />

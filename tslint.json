@@ -11,9 +11,9 @@
       "ordered-imports": false,
       "import-sources-order": "any",
       "named-imports-order": "any",
-      "no-console": "off",
+      "no-console": [false],
       "no-empty": false,
-      "member-ordering": false,
+      "member-ordering": [false],
       "arrow-parens": false
   }
 }
