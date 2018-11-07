@@ -1,11 +1,7 @@
+import LoginRouter from './view/Login/_router';
+import LayoutRouter from './view/Layout/_router';
+
 export default [
-  {
-    component: require('./view/Layout/index').default,
-    exact: true,
-    path: '/'
-  },
-  {
-    component: require('./view/Login/index').default,
-    path: '/login'
-  }
+  LoginRouter,
+  LayoutRouter,
 ]
