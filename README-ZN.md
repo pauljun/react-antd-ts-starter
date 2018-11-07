@@ -1,4 +1,4 @@
-[English](./README-ZN.md)
+[English](./README.md)
 
 ## 项目依赖 
 - [Create React App](https://github.com/facebookincubator/create-react-app)
